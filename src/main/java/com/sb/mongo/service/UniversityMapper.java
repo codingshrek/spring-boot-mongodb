@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface UniversityMapper {
 
@@ -13,4 +15,7 @@ public interface UniversityMapper {
             {@Mapping(target = "id",ignore = true)}
     )*/
     UniversityDto entityToApi(University university);
+
+    List<UniversityDto> entityListToApiList(List<University> universities);
+
 }

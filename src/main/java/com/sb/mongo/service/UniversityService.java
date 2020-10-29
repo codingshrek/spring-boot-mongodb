@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UniversityService {
 
@@ -30,6 +32,13 @@ public class UniversityService {
      University university=repo.findByName(name).orElseThrow(()->new NotFoundException("No university found with this name :- "+name));
      UniversityDto response= mapper.entityToApi(university);
      return  response;
+    }
+
+    @GetMapping("/university/sorted")
+    public List<UniversityDto> getUniversityInSortedOrder(){
+        List<University> university=repo.getUniversitiesInSortedOrder();
+        List<UniversityDto> response= mapper.entityListToApiList(university);
+        return  response;
     }
 
 
