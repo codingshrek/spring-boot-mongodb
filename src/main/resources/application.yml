@@ -1,0 +1,14 @@
+server.port: 8080
+server.error.include-message: always
+
+spring.data.mongodb:
+  auto-index-creation: true
+  host: localhost
+  port: 27017
+  database: spring-boot-test
+
+
+logging:
+  level:
+    root: INFO
+    com.sb.mongo: DEBUG
