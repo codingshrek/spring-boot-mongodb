@@ -8,9 +8,18 @@ public class UniversityDto {
     private String country;
     private String city;
     private String name;
+    private Integer rank;
     private List<StudentRecordDto> students;
 
     public UniversityDto() {
+    }
+
+    public UniversityDto(String country, String city, String name, Integer rank, List<StudentRecordDto> students) {
+        this.country = country;
+        this.city = city;
+        this.name = name;
+        this.rank = rank;
+        this.students = students;
     }
 
     public UniversityDto(String country, String city, String name, List<StudentRecordDto> students) {
@@ -50,5 +59,13 @@ public class UniversityDto {
 
     public void setStudents(List<StudentRecordDto> students) {
         this.students = students;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 }

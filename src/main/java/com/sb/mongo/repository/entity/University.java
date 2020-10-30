@@ -13,6 +13,7 @@ public class University {
     private String id;
     private String country;
     private String city;
+    private Integer rank;
     @Indexed(unique = true)
     private String name;
     private List<StudentRecord> students;
@@ -21,14 +22,14 @@ public class University {
 
     }
 
-    public University(String id, String country, String city, String name, List<StudentRecord> students) {
+    public University(String id, String country, String city, Integer rank, String name, List<StudentRecord> students) {
         this.id = id;
         this.country = country;
         this.city = city;
+        this.rank = rank;
         this.name = name;
         this.students = students;
     }
-
     public String getId() {
         return id;
     }
@@ -67,5 +68,15 @@ public class University {
 
     public void setStudents(List<StudentRecord> students) {
         this.students = students;
+    }
+
+
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 }
