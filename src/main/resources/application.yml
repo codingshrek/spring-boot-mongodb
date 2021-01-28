@@ -12,3 +12,8 @@ logging:
   level:
     root: INFO
     com.sb.mongo: DEBUG
+
+---
+spring.profiles : docker
+
+spring.data.mongodb.host: mongodb
